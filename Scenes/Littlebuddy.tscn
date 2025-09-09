@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://clpb06642xfgd"]
+
+[ext_resource type="Texture2D" uid="uid://buvtcj8vykvdc" path="res://Assets/Buddy.png" id="1_qutr5"]
+[ext_resource type="Script" path="res://Code/Littlebuddy.gd" id="2_wnug7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0qa1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qutr5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Litlle buddy" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_m0qa1")
+script = ExtResource("2_wnug7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -13.0
+offset_top = -36.0
+offset_right = 27.0
+offset_bottom = -9.0

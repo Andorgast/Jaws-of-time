@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b18lspopoaldg"]
+
+[ext_resource type="Script" path="res://Code/magic_potato_of_savefile_creation.gd" id="1_u8vgi"]
+
+[node name="Magic potato of savefile creation" type="Node2D"]
+script = ExtResource("1_u8vgi")
