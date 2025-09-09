@@ -1,7 +1,12 @@
 extends Button
 var attacktype
-func _ready():
-	get_node("../Enemy").attack_buddy.connect(_on_buddy_attacked)
+var connected = false
+#func _ready():
+#	get_node("../Enemy").attack_buddy.connect(_on_buddy_attacked)
+func _physics_process(_delta):
+	if !connected && (get_node_or_null("../Enemy") != null):
+		get_node("../Enemy").attack_buddy.connect(_on_buddy_attacked)
+		connected = true
 func _on_pressed():
 	$atk1.visible = !$atk1.visible
 	$atk2.visible = !$atk2.visible

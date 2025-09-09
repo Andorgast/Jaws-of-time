@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Attack_button.gd" id="1_mhcb0"]
 [ext_resource type="PackedScene" uid="uid://clpb06642xfgd" path="res://Scenes/Littlebuddy.tscn" id="2_32ckr"]
-[ext_resource type="PackedScene" uid="uid://dfn33pubjhuml" path="res://Scenes/Shade.tscn" id="3_qwyby"]
+[ext_resource type="PackedScene" uid="uid://dfn33pubjhuml" path="res://Scenes/enemy0.tscn" id="3_qwyby"]
 [ext_resource type="PackedScene" uid="uid://b18lspopoaldg" path="res://Scenes/magic_potato_of_savefile_creation.tscn" id="4_66f5i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3h3d"]

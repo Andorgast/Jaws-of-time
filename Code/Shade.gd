@@ -31,7 +31,6 @@ func take_damage(atk):
 	atk_2_id = file.get_var()
 	atk_3_id = file.get_var()
 	atk_damage = file.get_var()
-	print(atk_damage)
 	if atk == 1:
 		damage = atk_damage[atk_1_id]
 	elif atk == 2:
@@ -51,14 +50,10 @@ func take_damage(atk):
 func punch():
 	var punch_damage = 1
 	emit_signal("attack_buddy", punch_damage, effect)
-	print("punch")
-	print(punch_damage)
 func kick():
 	var kick_damage = round(rng.randf_range(0,1))
 	if round(rng.randf_range(0,1)) == 1:
 		effect = 1
-	print("kick")
-	print(kick_damage)
 	emit_signal("attack_buddy", kick_damage, effect)
 func die():
-	pass
+	get_tree().change_scene_to_file("res://Scenes/Battle_template.tscn")
