@@ -62,6 +62,12 @@ position = Vector2(46, -12)
 
 [node name="Magic potato of savefile creation" parent="." instance=ExtResource("4_66f5i")]
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -19.0
+offset_top = -45.0
+offset_right = 21.0
+offset_bottom = -21.0
+
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]
 [connection signal="pressed" from="Attack/atk2" to="Attack" method="_on_atk_2_pressed"]

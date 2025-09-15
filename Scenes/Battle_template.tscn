@@ -57,6 +57,12 @@ position = Vector2(-48, -12)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -4.0
+offset_top = -48.0
+offset_right = 36.0
+offset_bottom = -24.0
+
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]
 [connection signal="pressed" from="Attack/atk2" to="Attack" method="_on_atk_2_pressed"]

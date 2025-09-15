@@ -3,6 +3,7 @@ var hp
 signal skip_turn
 var connected
 var file
+var mana
 func _ready():
 	await get_tree().create_timer(0.01).timeout
 	file = FileAccess.open("res://save.data", FileAccess.READ)
@@ -10,8 +11,10 @@ func _ready():
 	file.get_var()
 	file.get_var()
 	hp = file.get_var()
+	mana = file.get_var()
 	file.close()
 	$RichTextLabel.text = str(hp)
+	get_node("../RichTextLabel").text = str(mana)
 func _physics_process(_delta):
 	if !connected && (get_node_or_null("../Enemy") != null):
 		get_node("../Enemy").attack_buddy.connect(_on_attacked)
@@ -22,18 +25,21 @@ func _on_attacked(dmg, _effect):
 		$RichTextLabel.text = str(hp)
 		die()
 	else:
-		hp = hp - dmg
-		$RichTextLabel.text = str(hp)
 		file = FileAccess.open("res://save.data", FileAccess.READ)
 		var enemyid = file.get_var()
 		var level = file.get_var()
 		var maxhp = file.get_var()
+		hp = file.get_var()
+		mana = file.get_var()
 		file.close()
+		hp = hp - dmg
+		$RichTextLabel.text = str(hp)
 		file = FileAccess.open("res://save.data", FileAccess.WRITE)
 		file.store_var(enemyid)
 		file.store_var(level)
 		file.store_var(maxhp)
 		file.store_var(hp)
+		file.store_var(mana)
 		file.close()
 #		if effect == 1:
 #			emit_signal("skip_turn")

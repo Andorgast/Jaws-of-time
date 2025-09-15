@@ -18,9 +18,6 @@ func enemyturn():
 	$atk3.visible = false
 func buddyturn():
 	visible = !false
-	$atk1.visible = !false
-	$atk2.visible = !false
-	$atk3.visible = !false
 func _on_atk_1_pressed():
 	enemyturn()
 func _on_atk_2_pressed():
