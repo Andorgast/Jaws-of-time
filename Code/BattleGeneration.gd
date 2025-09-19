@@ -12,12 +12,22 @@ func _ready():
 	level = file.get_var()
 	file.close()
 	if level < 10:
-		enemy_id = [round(rng.randf_range(0,5))]
+		enemy_id = [round(rng.randf_range(0,3))]
 		save_update()
 		var enemy = load("res://Scenes/enemy"+ str(enemy_id[0]) +".tscn").instantiate()
 		add_child(enemy)
 		enemy.move_local_x(46)
 		enemy.move_local_y(-12)
+		if round(rng.randf_range(0, 1)) == 1:
+			enemy_id.push_back(round(rng.randf_range(4,5)))
+			var enemy2 = load("res://Scenes/enemy"+ str(enemy_id[1]) +".tscn").instantiate()
+			add_child(enemy2)
+			enemy.name = "Enemy1"
+			enemy2.name = "Enemy2"
+			enemy.move_local_x(-10)
+			enemy2.move_local_x(56)
+			enemy2.move_local_y(-12)
+			enemy2.spawned_extra = true
 func save_update():
 	file = FileAccess.open("res://save.data", FileAccess.READ)
 	level = level + 1

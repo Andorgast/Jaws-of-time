@@ -4,7 +4,10 @@ var connected = false
 #func _ready():
 #	get_node("../Enemy").attack_buddy.connect(_on_buddy_attacked)
 func _physics_process(_delta):
-	if !connected && (get_node_or_null("../Enemy") != null):
+	if !connected && (get_node_or_null("../Enemy1") != null):
+		get_node("../Enemy1").attack_buddy.connect(_on_buddy_attacked)
+		connected = true
+	elif !connected && (get_node_or_null("../Enemy") != null):
 		get_node("../Enemy").attack_buddy.connect(_on_buddy_attacked)
 		connected = true
 func _on_pressed():

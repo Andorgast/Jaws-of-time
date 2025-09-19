@@ -16,9 +16,19 @@ func _ready():
 	$RichTextLabel.text = str(hp)
 	get_node("../RichTextLabel").text = str(mana)
 func _physics_process(_delta):
-	if !connected && (get_node_or_null("../Enemy") != null):
+	if !connected && (get_node_or_null("../Enemy1") != null) && (get_node_or_null("../Enemy2") != null):
+		get_node("../Enemy1").attack_buddy.connect(_on_attacked)
+		get_node("../Enemy2").attack_buddy.connect(_on_attacked)
+		print("double yaaaay")
+		connected = true
+	elif !connected && (get_node_or_null("../Enemy") != null):
 		get_node("../Enemy").attack_buddy.connect(_on_attacked)
 		connected = true
+func get_nodes_in_scene(scene:Node) -> Array:
+			var nodes = [scene]
+			for child in scene.get_children():
+				nodes.append_array(get_nodes_in_scene(child))
+			return nodes
 func _on_attacked(dmg, _effect):
 	if (hp - dmg) <= 0:
 		hp = 0

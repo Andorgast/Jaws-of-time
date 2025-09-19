@@ -13,6 +13,7 @@ var effect = 0
 signal attack_buddy
 var mana
 var buddyheal = 0
+@export var spawned_extra = false
 @onready var animations_buddy = get_node("../Litlle buddy")
 func _ready():
 	$RichTextLabel.text = str(health)
@@ -82,7 +83,8 @@ func kick():
 		effect = 1
 	emit_signal("attack_buddy", kick_damage, effect)
 func die():
-	get_tree().change_scene_to_file("res://Scenes/Battle_template.tscn")
+	if spawned_extra == false:
+		get_tree().change_scene_to_file("res://Scenes/Battle_template.tscn")
 func saveredo():
 	var file = FileAccess.open("res://save.data", FileAccess.READ)
 	var enemy = file.get_var()

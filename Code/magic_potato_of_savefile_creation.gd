@@ -23,7 +23,7 @@ func create_attacks():
 func create_savedata():
 	var file = FileAccess.open("res://save.data", FileAccess.WRITE)
 	var enemy_id = [1]
-	var level = 1
+	var level = 0
 	var maxhp = 10
 	var currenthp = 10
 	var mana = 5

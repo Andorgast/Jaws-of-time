@@ -23,6 +23,10 @@ window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
