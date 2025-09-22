@@ -7,6 +7,26 @@ script = ExtResource("1_n8btp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Og_3_spell" type="Node2D" parent="."]
+position = Vector2(46, 21)
+
+[node name="Button" type="Button" parent="Og_3_spell"]
+offset_left = -18.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 16.0
+text = "3"
+
+[node name="Og_2_spell" type="Node2D" parent="."]
+position = Vector2(-1, 22)
+
+[node name="Button" type="Button" parent="Og_2_spell"]
+offset_left = -18.0
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 16.0
+text = "2"
+
 [node name="Og_1_spell" type="Node2D" parent="."]
 position = Vector2(-45, 22)
 
@@ -28,5 +48,9 @@ position = Vector2(-45, 22)
 [node name="Spell_3" type="Node2D" parent="Spell_order_manager"]
 position = Vector2(46, 22)
 
-[connection signal="button_down" from="Og_1_spell/Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="Og_1_spell/Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="Og_3_spell/Button" to="." method="_on_button3_button_down"]
+[connection signal="button_up" from="Og_3_spell/Button" to="." method="_on_button3_button_up"]
+[connection signal="button_down" from="Og_2_spell/Button" to="." method="_on_button2_button_down"]
+[connection signal="button_up" from="Og_2_spell/Button" to="." method="_on_button2_button_up"]
+[connection signal="button_down" from="Og_1_spell/Button" to="." method="_on_button1_button_down"]
+[connection signal="button_up" from="Og_1_spell/Button" to="." method="_on_button1_button_up"]
