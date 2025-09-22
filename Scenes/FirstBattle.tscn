@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dooffc5amoeh8"]
+[gd_scene load_steps=9 format=3 uid="uid://dooffc5amoeh8"]
 
 [ext_resource type="Script" path="res://Code/Attack_button.gd" id="1_mhcb0"]
 [ext_resource type="PackedScene" uid="uid://clpb06642xfgd" path="res://Scenes/Littlebuddy.tscn" id="2_32ckr"]
@@ -6,6 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://b18lspopoaldg" path="res://Scenes/magic_potato_of_savefile_creation.tscn" id="4_66f5i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3h3d"]
+
+[sub_resource type="Gradient" id="Gradient_b3ahs"]
+colors = PackedColorArray(0.916088, 0.916088, 0.916088, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hct2"]
+gradient = SubResource("Gradient_b3ahs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pqvs8"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_max = 50.0
+scale_max = 2.0
+color = Color(1, 1, 0.729412, 0.345098)
+color_initial_ramp = SubResource("GradientTexture1D_3hct2")
 
 [node name="Background" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_g3h3d")
@@ -68,7 +83,20 @@ offset_top = -45.0
 offset_right = 21.0
 offset_bottom = -21.0
 
+[node name="CPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-41, -13)
+emitting = false
+amount = 1000000
+process_material = SubResource("ParticleProcessMaterial_pqvs8")
+lifetime = 15.0
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+draw_order = 0
+
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]
 [connection signal="pressed" from="Attack/atk2" to="Attack" method="_on_atk_2_pressed"]
 [connection signal="pressed" from="Attack/atk3" to="Attack" method="_on_atk_3_pressed"]
+[connection signal="animation_finished" from="Litlle buddy" to="Litlle buddy" method="_on_animation_finished"]
+[connection signal="finished" from="CPUParticles2D" to="Litlle buddy" method="_on_cpu_particles_2d_finished"]

@@ -28,6 +28,7 @@ func _ready():
 			enemy2.move_local_x(56)
 			enemy2.move_local_y(-12)
 			enemy2.spawned_extra = true
+			save_update()
 func save_update():
 	file = FileAccess.open("res://save.data", FileAccess.READ)
 	level = level + 1

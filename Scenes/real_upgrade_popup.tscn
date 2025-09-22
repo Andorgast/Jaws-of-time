@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://j7ep8mrvh1lg"]
+
+[ext_resource type="Script" path="res://Code/real_upgrade_popup.gd" id="1_fiubi"]
+
+[node name="Real_upgrade_popup" type="AnimatedSprite2D"]
+script = ExtResource("1_fiubi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Button3" type="Button" parent="Node2D"]
+offset_left = 30.0
+offset_top = -29.0
+offset_right = 64.0
+offset_bottom = 28.0
+
+[node name="Button2" type="Button" parent="Node2D"]
+offset_left = -17.0
+offset_top = -29.0
+offset_right = 18.0
+offset_bottom = 27.0
+
+[node name="Button" type="Button" parent="Node2D"]
+offset_left = -59.0
+offset_top = -30.0
+offset_right = -27.0
+offset_bottom = 28.0

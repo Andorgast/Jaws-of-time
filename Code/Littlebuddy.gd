@@ -5,6 +5,7 @@ var connected
 var file
 var mana
 func _ready():
+	play_backwards("die")
 	await get_tree().create_timer(0.01).timeout
 	file = FileAccess.open("res://save.data", FileAccess.READ)
 	file.get_var()
@@ -24,11 +25,6 @@ func _physics_process(_delta):
 	elif !connected && (get_node_or_null("../Enemy") != null):
 		get_node("../Enemy").attack_buddy.connect(_on_attacked)
 		connected = true
-func get_nodes_in_scene(scene:Node) -> Array:
-			var nodes = [scene]
-			for child in scene.get_children():
-				nodes.append_array(get_nodes_in_scene(child))
-			return nodes
 func _on_attacked(dmg, _effect):
 	if (hp - dmg) <= 0:
 		hp = 0
@@ -53,5 +49,15 @@ func _on_attacked(dmg, _effect):
 		file.close()
 #		if effect == 1:
 #			emit_signal("skip_turn")
+		if (hp - dmg) > hp:
+			pass
+		elif (hp - dmg) != hp:
+			play("hurt")
+			await animation_finished
+			play_backwards("hurt")
 func die():
+	play("die")
+	await animation_finished
 	get_tree().change_scene_to_file("res://Scenes/FirstBattle.tscn")
+func _on_cpu_particles_2d_finished():
+	play_backwards("Flash")

@@ -4,17 +4,12 @@ func _ready():
 	create_savedata()
 func create_attacks():
 	var file = FileAccess.open("res://attacks.data", FileAccess.WRITE)
-	var atk_1_id = 0 #flash
-	var atk_2_id = 1 #bonk!
-#	var atk_3_id = 2 #lightning jolt
-	var atk_3_id = 3 #Heal
+	var atk_id = [0, 1, 3]
 	var atk_damage = [1, 2, 2, -3]
 	var atk_effect = [1, 0, 2, 3]
 	var dmg_type = [3, 1, 2, 4]
 	var mana_cost = [1, -2, 2, 5]
-	file.store_var(atk_1_id)
-	file.store_var(atk_2_id)
-	file.store_var(atk_3_id)
+	file.store_var(atk_id)
 	file.store_var(atk_damage)
 	file.store_var(atk_effect)
 	file.store_var(dmg_type)
