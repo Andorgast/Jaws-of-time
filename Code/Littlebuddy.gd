@@ -5,7 +5,7 @@ var connected
 var file
 var mana
 func _ready():
-	play_backwards("die")
+#	play_backwards("die")
 	await get_tree().create_timer(0.01).timeout
 	file = FileAccess.open("res://save.data", FileAccess.READ)
 	file.get_var()

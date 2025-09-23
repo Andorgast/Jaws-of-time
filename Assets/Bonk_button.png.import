@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt1xjirbxgbcv"
-path="res://.godot/imported/2554997-mario hero.png-d65a5f252d21c67b0959aaf162e9302f.ctex"
+uid="uid://bdo4tj1cwswju"
+path="res://.godot/imported/Bonk_button.png-2d8a4038e7c22ebe553649d75a7f2634.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/2554997-mario hero.png"
-dest_files=["res://.godot/imported/2554997-mario hero.png-d65a5f252d21c67b0959aaf162e9302f.ctex"]
+source_file="res://Assets/Bonk_button.png"
+dest_files=["res://.godot/imported/Bonk_button.png-2d8a4038e7c22ebe553649d75a7f2634.ctex"]
 
 [params]
 

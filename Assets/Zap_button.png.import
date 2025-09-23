@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw881o3vyvtmj"
-path="res://.godot/imported/41477_2019_374_Figa_HTML.jpg-a2107ef57a7eb280f1d5f31c1449c342.ctex"
+uid="uid://btf0nns8upjny"
+path="res://.godot/imported/Zap_button.png-2ccf030f06c61004635d8b4e85c481bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/41477_2019_374_Figa_HTML.jpg"
-dest_files=["res://.godot/imported/41477_2019_374_Figa_HTML.jpg-a2107ef57a7eb280f1d5f31c1449c342.ctex"]
+source_file="res://Assets/Zap_button.png"
+dest_files=["res://.godot/imported/Zap_button.png-2ccf030f06c61004635d8b4e85c481bb.ctex"]
 
 [params]
 

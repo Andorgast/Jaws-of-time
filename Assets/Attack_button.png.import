@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnt2e2ywndw0a"
-path="res://.godot/imported/New Piskel-1.png.png-8f6d42e63b16e95e40fa034040f53d9a.ctex"
+uid="uid://dhhqpeq0ojygu"
+path="res://.godot/imported/Attack_button.png-a27e17ca23438a3e10a99459abe95555.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-8f6d42e63b16e95e40fa034040f53d9a.ctex"]
+source_file="res://Assets/Attack_button.png"
+dest_files=["res://.godot/imported/Attack_button.png-a27e17ca23438a3e10a99459abe95555.ctex"]
 
 [params]
 

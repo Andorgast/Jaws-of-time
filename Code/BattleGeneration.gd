@@ -3,7 +3,7 @@ var file
 var rng =  RandomNumberGenerator.new()
 var enemy_id
 var level
-var maxhp
+var enemyhp
 var hp
 var mana
 func _ready():
@@ -33,15 +33,14 @@ func save_update():
 	file = FileAccess.open("res://save.data", FileAccess.READ)
 	level = level + 1
 	file.get_var()
-	file.get_var()
-	maxhp = file.get_var()
+	enemyhp = file.get_var()
 	hp = file.get_var()
 	mana = file.get_var()
 	file.close()
 	file = FileAccess.open("res://save.data", FileAccess.WRITE)
 	file.store_var(enemy_id)
 	file.store_var(level)
-	file.store_var(maxhp)
+	file.store_var(enemyhp)
 	file.store_var(hp)
 	file.store_var(mana)
 	file.close()

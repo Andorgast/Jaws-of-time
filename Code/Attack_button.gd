@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 var attacktype
 var connected = false
 #func _ready():
@@ -14,11 +14,13 @@ func _on_pressed():
 	$atk1.visible = !$atk1.visible
 	$atk2.visible = !$atk2.visible
 	$atk3.visible = !$atk3.visible
+	$atk4.visible = !$atk4.visible
 func enemyturn():
 	visible = false
 	$atk1.visible = false
 	$atk2.visible = false
 	$atk3.visible = false
+	$atk4.visible = false
 func buddyturn():
 	visible = !false
 func _on_atk_1_pressed():
@@ -26,6 +28,8 @@ func _on_atk_1_pressed():
 func _on_atk_2_pressed():
 	enemyturn()
 func _on_atk_3_pressed():
+	enemyturn()
+func _on_atk_4_pressed():
 	enemyturn()
 func _on_buddy_attacked(_not_used, _neither_is_this):
 	buddyturn()

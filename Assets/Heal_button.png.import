@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dglqxiodut08t"
-path="res://.godot/imported/New Piskel-3.png.png-f2338931e9ef62b1e51f1bee5eacf081.ctex"
+uid="uid://lm4demfycsma"
+path="res://.godot/imported/Heal_button.png-963cd6ad4531e0f33922df8fc619928a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New Piskel-3.png.png"
-dest_files=["res://.godot/imported/New Piskel-3.png.png-f2338931e9ef62b1e51f1bee5eacf081.ctex"]
+source_file="res://Assets/Heal_button.png"
+dest_files=["res://.godot/imported/Heal_button.png-963cd6ad4531e0f33922df8fc619928a.ctex"]
 
 [params]
 

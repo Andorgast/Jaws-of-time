@@ -1,17 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://dooffc5amoeh8"]
+[gd_scene load_steps=14 format=3 uid="uid://dooffc5amoeh8"]
 
 [ext_resource type="Script" path="res://Code/Attack_button.gd" id="1_mhcb0"]
 [ext_resource type="PackedScene" uid="uid://clpb06642xfgd" path="res://Scenes/Littlebuddy.tscn" id="2_32ckr"]
 [ext_resource type="PackedScene" uid="uid://dfn33pubjhuml" path="res://Scenes/enemy0.tscn" id="3_qwyby"]
 [ext_resource type="PackedScene" uid="uid://b18lspopoaldg" path="res://Scenes/magic_potato_of_savefile_creation.tscn" id="4_66f5i"]
+[ext_resource type="Texture2D" uid="uid://dhhqpeq0ojygu" path="res://Assets/Attack_button.png" id="5_xfgsn"]
+[ext_resource type="Texture2D" uid="uid://bfd0woea2pxsr" path="res://Assets/Flash_button.png" id="6_xdv0c"]
+[ext_resource type="Texture2D" uid="uid://lm4demfycsma" path="res://Assets/Heal_button.png" id="7_8wqsj"]
+[ext_resource type="Texture2D" uid="uid://btf0nns8upjny" path="res://Assets/Zap_button.png" id="8_gcpy2"]
+[ext_resource type="Texture2D" uid="uid://bdo4tj1cwswju" path="res://Assets/Bonk_button.png" id="9_pl7f4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3h3d"]
 
-[sub_resource type="Gradient" id="Gradient_b3ahs"]
-colors = PackedColorArray(0.916088, 0.916088, 0.916088, 1, 1, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_h0bgn"]
+offsets = PackedFloat32Array(0, 0.264706, 0.54902, 0.77451, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.677568, 0.677567, 0.677567, 1, 1, 1, 1, 1, 0.745683, 0.745683, 0.745683, 1, 0.823529, 0.823529, 0.823529, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hct2"]
-gradient = SubResource("Gradient_b3ahs")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bvkaq"]
+gradient = SubResource("Gradient_h0bgn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pqvs8"]
 emission_shape = 2
@@ -19,53 +25,11 @@ emission_sphere_radius = 1.0
 gravity = Vector3(0, 0, 0)
 radial_accel_max = 50.0
 scale_max = 2.0
-color = Color(1, 1, 0.729412, 0.345098)
-color_initial_ramp = SubResource("GradientTexture1D_3hct2")
+color = Color(1, 1, 0.796078, 1)
+color_ramp = SubResource("GradientTexture1D_bvkaq")
 
 [node name="Background" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_g3h3d")
-
-[node name="Attack" type="Button" parent="."]
-texture_filter = 1
-texture_repeat = 1
-offset_left = -22.0
-offset_top = 8.0
-offset_right = 22.0
-offset_bottom = 39.0
-text = "fight
-"
-script = ExtResource("1_mhcb0")
-
-[node name="atk1" type="Button" parent="Attack"]
-visible = false
-texture_filter = 1
-texture_repeat = 1
-layout_mode = 0
-offset_left = -43.0
-offset_right = -7.0
-offset_bottom = 31.0
-text = "1"
-
-[node name="atk2" type="Button" parent="Attack"]
-visible = false
-texture_filter = 1
-texture_repeat = 1
-layout_mode = 0
-offset_left = 50.0
-offset_right = 86.0
-offset_bottom = 31.0
-text = "2"
-
-[node name="atk3" type="Button" parent="Attack"]
-visible = false
-texture_filter = 1
-texture_repeat = 1
-layout_mode = 0
-offset_left = 4.0
-offset_top = -36.0
-offset_right = 40.0
-offset_bottom = -5.0
-text = "3"
 
 [node name="Litlle buddy" parent="." instance=ExtResource("2_32ckr")]
 position = Vector2(-48, -12)
@@ -88,15 +52,66 @@ position = Vector2(-41, -13)
 emitting = false
 amount = 1000000
 process_material = SubResource("ParticleProcessMaterial_pqvs8")
-lifetime = 15.0
+lifetime = 5.0
 one_shot = true
 explosiveness = 0.5
 randomness = 1.0
 draw_order = 0
 
+[node name="Attack" type="TextureButton" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_left = -15.0
+offset_top = 23.0
+offset_right = 15.0
+offset_bottom = 43.0
+texture_normal = ExtResource("5_xfgsn")
+script = ExtResource("1_mhcb0")
+
+[node name="atk1" type="TextureButton" parent="Attack"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 31.0
+offset_right = 61.0
+offset_bottom = 20.0
+texture_normal = ExtResource("6_xdv0c")
+
+[node name="atk2" type="TextureButton" parent="Attack"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -62.0
+offset_right = -32.0
+offset_bottom = 20.0
+texture_normal = ExtResource("7_8wqsj")
+
+[node name="atk3" type="TextureButton" parent="Attack"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = -31.0
+offset_right = -1.0
+offset_bottom = 20.0
+texture_normal = ExtResource("8_gcpy2")
+
+[node name="atk4" type="TextureButton" parent="Attack"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 62.0
+offset_right = 92.0
+offset_bottom = 20.0
+texture_normal = ExtResource("9_pl7f4")
+
+[connection signal="animation_finished" from="Litlle buddy" to="Litlle buddy" method="_on_animation_finished"]
+[connection signal="finished" from="CPUParticles2D" to="Litlle buddy" method="_on_cpu_particles_2d_finished"]
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]
 [connection signal="pressed" from="Attack/atk2" to="Attack" method="_on_atk_2_pressed"]
 [connection signal="pressed" from="Attack/atk3" to="Attack" method="_on_atk_3_pressed"]
-[connection signal="animation_finished" from="Litlle buddy" to="Litlle buddy" method="_on_animation_finished"]
-[connection signal="finished" from="CPUParticles2D" to="Litlle buddy" method="_on_cpu_particles_2d_finished"]
+[connection signal="pressed" from="Attack/atk4" to="Attack" method="_on_atk_4_pressed"]
