@@ -2,4 +2,5 @@
 .godot/
 
 #ignores the import files godot makes
-*.import 
+**/*.import
+/*.import
