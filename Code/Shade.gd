@@ -1,6 +1,5 @@
 extends AnimatedSprite2D
-var health
-var hp_cache
+var health = 10
 var rng =  RandomNumberGenerator.new()
 var atk_id 
 var atk_damage
@@ -15,17 +14,7 @@ var buddyheal = 0
 signal attackanimation
 @export var spawned_extra = false
 func _ready():
-	if FileAccess.file_exists("res://save.data"):
-		var file = FileAccess.open("res://save.data", FileAccess.READ)
-		file.get_var()
-		file.get_var()
-		hp_cache = file.get_var()
-		file.close()
-		$RichTextLabel.text = str(hp_cache[0])
-		health = hp_cache[0]
-	else:
-		$RichTextLabel.text = str(10)
-		health = 10
+	$RichTextLabel.text = str(health)
 	get_node("../Attack/atk1").pressed.connect(_on_atk_1_pressed)
 	get_node("../Attack/atk2").pressed.connect(_on_atk_2_pressed)
 	get_node("../Attack/atk3").pressed.connect(_on_atk_3_pressed)
@@ -104,7 +93,7 @@ func saveredo():
 	var file = FileAccess.open("res://save.data", FileAccess.READ)
 	var enemy = file.get_var()
 	var level = file.get_var()
-	file.get_var()
+	var maxhp = file.get_var()
 	var hp = file.get_var()
 	hp = hp - buddyheal
 	buddyheal = 0
@@ -114,7 +103,7 @@ func saveredo():
 	get_node("../Litlle buddy/RichTextLabel").text = str(hp)
 	file.store_var(enemy)
 	file.store_var(level)
-	file.store_var(hp_cache)
+	file.store_var(maxhp)
 	file.store_var(hp)
 	file.store_var(mana)
 	file.close()

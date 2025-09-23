@@ -4,13 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://clpb06642xfgd" path="res://Scenes/Littlebuddy.tscn" id="2_32ckr"]
 [ext_resource type="PackedScene" uid="uid://dfn33pubjhuml" path="res://Scenes/enemy0.tscn" id="3_qwyby"]
 [ext_resource type="PackedScene" uid="uid://b18lspopoaldg" path="res://Scenes/magic_potato_of_savefile_creation.tscn" id="4_66f5i"]
-[ext_resource type="Texture2D" uid="uid://dhhqpeq0ojygu" path="res://Assets/Attack_button.png" id="5_xfgsn"]
-[ext_resource type="Texture2D" uid="uid://bfd0woea2pxsr" path="res://Assets/Flash_button.png" id="6_xdv0c"]
-[ext_resource type="Texture2D" uid="uid://lm4demfycsma" path="res://Assets/Heal_button.png" id="7_8wqsj"]
-[ext_resource type="Texture2D" uid="uid://btf0nns8upjny" path="res://Assets/Zap_button.png" id="8_gcpy2"]
-[ext_resource type="Texture2D" uid="uid://bdo4tj1cwswju" path="res://Assets/Bonk_button.png" id="9_pl7f4"]
+[ext_resource type="Texture2D" uid="uid://oac6xhhn3cft" path="res://Assets/Attack_button.png" id="5_xfgsn"]
+[ext_resource type="Texture2D" uid="uid://dytfkv4ri2fg2" path="res://Assets/Flash_button.png" id="6_xdv0c"]
+[ext_resource type="Texture2D" uid="uid://dpvel2r880um2" path="res://Assets/Heal_button.png" id="7_8wqsj"]
+[ext_resource type="Texture2D" uid="uid://bl3yuyeo56hcm" path="res://Assets/Zap_button.png" id="8_gcpy2"]
+[ext_resource type="Texture2D" uid="uid://drkjjj4tnmosh" path="res://Assets/Bonk_button.png" id="9_pl7f4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3h3d"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_h0bgn"]
 offsets = PackedFloat32Array(0, 0.264706, 0.54902, 0.77451, 1)
@@ -30,9 +36,11 @@ color_ramp = SubResource("GradientTexture1D_bvkaq")
 
 [node name="Background" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_g3h3d")
+animation = &"Default"
 
 [node name="Litlle buddy" parent="." instance=ExtResource("2_32ckr")]
-position = Vector2(-48, -12)
+position = Vector2(-41, -13)
+animation = &"die"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -108,8 +116,6 @@ offset_right = 92.0
 offset_bottom = 20.0
 texture_normal = ExtResource("9_pl7f4")
 
-[connection signal="animation_finished" from="Litlle buddy" to="Litlle buddy" method="_on_animation_finished"]
-[connection signal="finished" from="CPUParticles2D" to="Litlle buddy" method="_on_cpu_particles_2d_finished"]
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]
 [connection signal="pressed" from="Attack/atk2" to="Attack" method="_on_atk_2_pressed"]
