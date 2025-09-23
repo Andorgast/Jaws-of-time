@@ -19,7 +19,7 @@ func create_savedata():
 	var file = FileAccess.open("res://save.data", FileAccess.WRITE)
 	var enemy_id = [0]
 	var level = 0
-	var enemyhp = [10]
+	var enemyhp = [10, "this is to make it an array just in case it somehow wasnt"]
 	var currenthp = 10
 	var mana = 5
 	file.store_var(enemy_id)
