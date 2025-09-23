@@ -1,13 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3w1sr5xwqypq"]
+[gd_scene load_steps=6 format=3 uid="uid://b3w1sr5xwqypq"]
 
 [ext_resource type="Script" path="res://Code/BattleGeneration.gd" id="1_4d0ri"]
 [ext_resource type="Script" path="res://Code/Attack_button.gd" id="2_fufu5"]
 [ext_resource type="PackedScene" uid="uid://clpb06642xfgd" path="res://Scenes/Littlebuddy.tscn" id="3_dbacy"]
 [ext_resource type="Texture2D" uid="uid://oac6xhhn3cft" path="res://Assets/Attack_button.png" id="3_ellty"]
-[ext_resource type="Texture2D" uid="uid://dytfkv4ri2fg2" path="res://Assets/Flash_button.png" id="5_b801a"]
-[ext_resource type="Texture2D" uid="uid://dpvel2r880um2" path="res://Assets/Heal_button.png" id="6_d8ctl"]
-[ext_resource type="Texture2D" uid="uid://bl3yuyeo56hcm" path="res://Assets/Zap_button.png" id="7_ijcqd"]
-[ext_resource type="Texture2D" uid="uid://drkjjj4tnmosh" path="res://Assets/Bonk_button.png" id="8_iebu7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3h3d"]
 
@@ -41,22 +37,11 @@ visible = false
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
-offset_left = 31.0
-offset_right = 61.0
-offset_bottom = 20.0
-texture_normal = ExtResource("5_b801a")
-
-[node name="atk2" type="TextureButton" parent="Attack"]
-visible = false
-texture_filter = 1
-texture_repeat = 1
-layout_mode = 0
 offset_left = -62.0
 offset_right = -32.0
 offset_bottom = 20.0
-texture_normal = ExtResource("6_d8ctl")
 
-[node name="atk3" type="TextureButton" parent="Attack"]
+[node name="atk2" type="TextureButton" parent="Attack"]
 visible = false
 texture_filter = 1
 texture_repeat = 1
@@ -64,7 +49,15 @@ layout_mode = 0
 offset_left = -31.0
 offset_right = -1.0
 offset_bottom = 20.0
-texture_normal = ExtResource("7_ijcqd")
+
+[node name="atk3" type="TextureButton" parent="Attack"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 31.0
+offset_right = 61.0
+offset_bottom = 20.0
 
 [node name="atk4" type="TextureButton" parent="Attack"]
 visible = false
@@ -74,7 +67,6 @@ layout_mode = 0
 offset_left = 62.0
 offset_right = 92.0
 offset_bottom = 20.0
-texture_normal = ExtResource("8_iebu7")
 
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]

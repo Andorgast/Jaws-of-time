@@ -2,7 +2,24 @@ extends AnimatedSprite2D
 var file
 var rng =  RandomNumberGenerator.new()
 var enemy_id
+var buttonid
+var texture
+var texture1 = preload("res://Assets/button0.png")
+var texture2 = preload("res://Assets/button1.png")
+var texture3 = preload("res://Assets/button2.png")
+var texture4 = preload("res://Assets/button3.png")
 func _ready():
+	file = FileAccess.open("res://attacks.data", FileAccess.READ)
+	buttonid = file.get_var()
+	file.close()
+	preparetexture(0)
+	$Attack/atk1.texture_normal = texture
+	preparetexture(1)
+	$Attack/atk2.texture_normal = texture
+	preparetexture(2)
+	$Attack/atk3.texture_normal = texture
+	preparetexture(3)
+	$Attack/atk4.texture_normal = texture
 	file = FileAccess.open("res://save.data", FileAccess.READ)
 	enemy_id = file.get_var()
 	file.close()
@@ -19,3 +36,12 @@ func _ready():
 		enemy2.move_local_x(56)
 		enemy2.move_local_y(-12)
 		enemy2.spawned_extra = true
+func preparetexture(toPrepare):
+	if buttonid[toPrepare] == 0:
+		texture = texture1
+	elif buttonid[toPrepare] == 1:
+		texture = texture2
+	elif buttonid[toPrepare] == 2:
+		texture = texture3
+	elif buttonid[toPrepare] == 3:
+		texture = texture4

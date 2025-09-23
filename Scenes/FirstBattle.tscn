@@ -1,14 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dooffc5amoeh8"]
+[gd_scene load_steps=10 format=3 uid="uid://dooffc5amoeh8"]
 
 [ext_resource type="Script" path="res://Code/Attack_button.gd" id="1_mhcb0"]
 [ext_resource type="PackedScene" uid="uid://clpb06642xfgd" path="res://Scenes/Littlebuddy.tscn" id="2_32ckr"]
 [ext_resource type="PackedScene" uid="uid://dfn33pubjhuml" path="res://Scenes/enemy0.tscn" id="3_qwyby"]
 [ext_resource type="PackedScene" uid="uid://b18lspopoaldg" path="res://Scenes/magic_potato_of_savefile_creation.tscn" id="4_66f5i"]
 [ext_resource type="Texture2D" uid="uid://oac6xhhn3cft" path="res://Assets/Attack_button.png" id="5_xfgsn"]
-[ext_resource type="Texture2D" uid="uid://dytfkv4ri2fg2" path="res://Assets/Flash_button.png" id="6_xdv0c"]
-[ext_resource type="Texture2D" uid="uid://dpvel2r880um2" path="res://Assets/Heal_button.png" id="7_8wqsj"]
-[ext_resource type="Texture2D" uid="uid://bl3yuyeo56hcm" path="res://Assets/Zap_button.png" id="8_gcpy2"]
-[ext_resource type="Texture2D" uid="uid://drkjjj4tnmosh" path="res://Assets/Bonk_button.png" id="9_pl7f4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3h3d"]
 animations = [{
@@ -39,7 +35,7 @@ sprite_frames = SubResource("SpriteFrames_g3h3d")
 animation = &"Default"
 
 [node name="Litlle buddy" parent="." instance=ExtResource("2_32ckr")]
-position = Vector2(-41, -13)
+position = Vector2(-48, -12)
 animation = &"die"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -81,22 +77,11 @@ visible = false
 texture_filter = 1
 texture_repeat = 1
 layout_mode = 0
-offset_left = 31.0
-offset_right = 61.0
-offset_bottom = 20.0
-texture_normal = ExtResource("6_xdv0c")
-
-[node name="atk2" type="TextureButton" parent="Attack"]
-visible = false
-texture_filter = 1
-texture_repeat = 1
-layout_mode = 0
 offset_left = -62.0
 offset_right = -32.0
 offset_bottom = 20.0
-texture_normal = ExtResource("7_8wqsj")
 
-[node name="atk3" type="TextureButton" parent="Attack"]
+[node name="atk2" type="TextureButton" parent="Attack"]
 visible = false
 texture_filter = 1
 texture_repeat = 1
@@ -104,7 +89,15 @@ layout_mode = 0
 offset_left = -31.0
 offset_right = -1.0
 offset_bottom = 20.0
-texture_normal = ExtResource("8_gcpy2")
+
+[node name="atk3" type="TextureButton" parent="Attack"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 31.0
+offset_right = 61.0
+offset_bottom = 20.0
 
 [node name="atk4" type="TextureButton" parent="Attack"]
 visible = false
@@ -114,7 +107,6 @@ layout_mode = 0
 offset_left = 62.0
 offset_right = 92.0
 offset_bottom = 20.0
-texture_normal = ExtResource("9_pl7f4")
 
 [connection signal="pressed" from="Attack" to="Attack" method="_on_pressed"]
 [connection signal="pressed" from="Attack/atk1" to="Attack" method="_on_atk_1_pressed"]

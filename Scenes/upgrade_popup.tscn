@@ -1,56 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://tfkys7jdaxai"]
+[gd_scene load_steps=3 format=3 uid="uid://tfkys7jdaxai"]
 
 [ext_resource type="Script" path="res://Code/upgrade_popup.gd" id="1_n8btp"]
+[ext_resource type="Texture2D" uid="uid://oac6xhhn3cft" path="res://Assets/Attack_button.png" id="2_37e0q"]
 
 [node name="UpgradePopup" type="AnimatedSprite2D"]
 script = ExtResource("1_n8btp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Og_3_spell" type="Node2D" parent="."]
-position = Vector2(46, 21)
+[node name="Og_4_spell" type="Node2D" parent="."]
+position = Vector2(60, 28)
 
-[node name="Button" type="Button" parent="Og_3_spell"]
-offset_left = -18.0
-offset_top = -15.0
-offset_right = 19.0
-offset_bottom = 16.0
-text = "3"
+[node name="TextureButton" type="TextureButton" parent="Og_4_spell"]
+texture_filter = 1
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 15.0
+offset_bottom = 10.0
+texture_normal = ExtResource("2_37e0q")
+
+[node name="Og_3_spell" type="Node2D" parent="."]
+position = Vector2(21, 28)
+
+[node name="TextureButton" type="TextureButton" parent="Og_3_spell"]
+texture_filter = 1
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 15.0
+offset_bottom = 10.0
+texture_normal = ExtResource("2_37e0q")
 
 [node name="Og_2_spell" type="Node2D" parent="."]
-position = Vector2(-1, 22)
+position = Vector2(-23, 28)
 
-[node name="Button" type="Button" parent="Og_2_spell"]
-offset_left = -18.0
-offset_top = -15.0
-offset_right = 19.0
-offset_bottom = 16.0
-text = "2"
+[node name="TextureButton" type="TextureButton" parent="Og_2_spell"]
+texture_filter = 1
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 15.0
+offset_bottom = 10.0
+texture_normal = ExtResource("2_37e0q")
 
 [node name="Og_1_spell" type="Node2D" parent="."]
-position = Vector2(-45, 22)
+position = Vector2(-61, 28)
 
-[node name="Button" type="Button" parent="Og_1_spell"]
-offset_left = -18.0
-offset_top = -15.0
-offset_right = 19.0
-offset_bottom = 16.0
-text = "1"
+[node name="TextureButton" type="TextureButton" parent="Og_1_spell"]
+texture_filter = 1
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 15.0
+offset_bottom = 10.0
+texture_normal = ExtResource("2_37e0q")
 
 [node name="Spell_order_manager" type="Node2D" parent="."]
 
 [node name="Spell_1" type="Node2D" parent="Spell_order_manager"]
-position = Vector2(-45, 22)
+position = Vector2(-61, 28)
 
 [node name="Spell_2" type="Node2D" parent="Spell_order_manager"]
-position = Vector2(-1, 22)
+position = Vector2(-23, 28)
 
 [node name="Spell_3" type="Node2D" parent="Spell_order_manager"]
-position = Vector2(46, 22)
+position = Vector2(21, 28)
 
-[connection signal="button_down" from="Og_3_spell/Button" to="." method="_on_button3_button_down"]
-[connection signal="button_up" from="Og_3_spell/Button" to="." method="_on_button3_button_up"]
-[connection signal="button_down" from="Og_2_spell/Button" to="." method="_on_button2_button_down"]
-[connection signal="button_up" from="Og_2_spell/Button" to="." method="_on_button2_button_up"]
-[connection signal="button_down" from="Og_1_spell/Button" to="." method="_on_button1_button_down"]
-[connection signal="button_up" from="Og_1_spell/Button" to="." method="_on_button1_button_up"]
+[node name="Spell_4" type="Node2D" parent="Spell_order_manager"]
+position = Vector2(60, 28)
+
+[connection signal="button_down" from="Og_4_spell/TextureButton" to="." method="_on_button4_button_down"]
+[connection signal="button_up" from="Og_4_spell/TextureButton" to="." method="_on_button4_button_up"]
+[connection signal="button_down" from="Og_3_spell/TextureButton" to="." method="_on_button3_button_down"]
+[connection signal="button_up" from="Og_3_spell/TextureButton" to="." method="_on_button3_button_up"]
+[connection signal="button_down" from="Og_2_spell/TextureButton" to="." method="_on_button2_button_down"]
+[connection signal="button_up" from="Og_2_spell/TextureButton" to="." method="_on_button2_button_up"]
+[connection signal="button_down" from="Og_1_spell/TextureButton" to="." method="_on_button1_button_down"]
+[connection signal="button_up" from="Og_1_spell/TextureButton" to="." method="_on_button1_button_up"]
